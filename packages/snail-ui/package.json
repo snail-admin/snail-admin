@@ -1,0 +1,19 @@
+{
+  "name": "snail-ui",
+  "version": "1.0.0",
+  "description": "A Component Library for Vue 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "snail-ui",
+    "snail",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue"
+  ],
+  "author": "hu-snail",
+  "license": "MIT"
+}

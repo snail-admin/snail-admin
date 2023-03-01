@@ -1,0 +1,10 @@
+{
+  "name": "@snail-admin/play",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@snail-admin/components": "workspace:^1.0.0"
+  }
+}
