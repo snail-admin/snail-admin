@@ -1,0 +1,12 @@
+{
+  "name": "snail-login",
+  "version": "1.0.0",
+  "description": "snail-admin后台登录模板",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "hu-snail <1217437592@qq.com>",
+  "license": "ISC"
+}
