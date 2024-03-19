@@ -11,6 +11,12 @@ importers:
       '@snail-admin/eslint-config':
         specifier: workspace:*
         version: link:packages/snail-eslint-config
+      '@types/node':
+        specifier: ^20.11.28
+        version: 20.11.28
+      chalk:
+        specifier: ^5.3.0
+        version: 5.3.0
       eslint:
         specifier: ^8.43.0
         version: 8.43.0
@@ -23,6 +29,9 @@ importers:
       nanospinner:
         specifier: ^1.1.0
         version: 1.1.0
+      picocolors:
+        specifier: ^1.0.0
+        version: 1.0.0
       prettier:
         specifier: ^2.8.8
         version: 2.8.8
@@ -32,6 +41,9 @@ importers:
       simple-git-hooks:
         specifier: ^2.8.0
         version: 2.8.0
+      tsx:
+        specifier: ^4.7.1
+        version: 4.7.1
       typescript:
         specifier: ^5.1.5
         version: 5.1.5
@@ -60,13 +72,41 @@ importers:
         specifier: ^9.15.1
         version: 9.15.1(eslint@8.43.0)
 
-  packages/snail-login: {}
+  packages/snail-login:
+    devDependencies:
+      typescript:
+        specifier: ^5.1.5
+        version: 5.1.5
+      vue:
+        specifier: ^3.4.21
+        version: 3.4.21(typescript@5.1.5)
 
   packages/snail-site:
     devDependencies:
       vitepress:
         specifier: 1.0.0-rc.45
-        version: 1.0.0-rc.45(@algolia/client-search@4.22.1)(search-insights@2.13.0)(typescript@5.1.5)
+        version: 1.0.0-rc.45(@algolia/client-search@4.22.1)(@types/node@20.11.28)(search-insights@2.13.0)(typescript@5.1.5)
+      vue:
+        specifier: ^3.4.21
+        version: 3.4.21(typescript@5.1.5)
+
+  packages/snail-template:
+    devDependencies:
+      '@snail-admin/eslint-config':
+        specifier: workspace:*
+        version: link:../snail-eslint-config
+      '@snail-admin/snail-login':
+        specifier: workspace:*
+        version: link:../snail-login
+      '@vitejs/plugin-vue':
+        specifier: ^5.0.4
+        version: 5.0.4(vite@5.1.6)(vue@3.4.21)
+      typescript:
+        specifier: ^5.1.5
+        version: 5.1.5
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6(@types/node@20.11.28)
       vue:
         specifier: ^3.4.21
         version: 3.4.21(typescript@5.1.5)
@@ -725,6 +765,12 @@ packages:
     resolution: {integrity: sha512-6L6VymKTzYSrEf4Nev4Xa1LCHKrlTlYCBMTlQKFuddo1CvQcE52I0mwfOJayueUC7MJuXOeHTcIU683lzd0cUA==}
     dev: true
 
+  /@types/node@20.11.28:
+    resolution: {integrity: sha512-M/GPWVS2wLkSkNHVeLkrF2fD5Lx5UC4PxA0uZcKc6QqbIQUJyW1jVjueJYi1z8n0I5PxYrtpnPnWglE+y9A0KA==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
+
   /@types/semver@7.5.8:
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
     dev: false
@@ -870,7 +916,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.1.6
+      vite: 5.1.6(@types/node@20.11.28)
       vue: 3.4.21(typescript@5.1.5)
     dev: true
 
@@ -1223,6 +1269,11 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+
+  /chalk@5.3.0:
+    resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: true
 
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -1904,6 +1955,12 @@ packages:
       get-intrinsic: 1.2.4
     dev: false
 
+  /get-tsconfig@4.7.3:
+    resolution: {integrity: sha512-ZvkrzoUA0PQZM6fy6+/Hce561s+faD1rsNwhnO5FelNjyy7EMGJ3Rz1AQ8GYDWjhRs/7dBLOEJvhK8MiEJOAFg==}
+    dependencies:
+      resolve-pkg-maps: 1.0.0
+    dev: true
+
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -2549,6 +2606,10 @@ packages:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
 
+  /resolve-pkg-maps@1.0.0:
+    resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
+    dev: true
+
   /resolve@1.22.8:
     resolution: {integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==}
     hasBin: true
@@ -2846,6 +2907,17 @@ packages:
       typescript: 5.1.5
     dev: false
 
+  /tsx@4.7.1:
+    resolution: {integrity: sha512-8d6VuibXHtlN5E3zFkgY8u4DX7Y3Z27zvvPKVmLon/D4AjuKzarkUBTLDBgj9iTQ0hg5xM7c/mYiRVM+HETf0g==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    dependencies:
+      esbuild: 0.19.12
+      get-tsconfig: 4.7.3
+    optionalDependencies:
+      fsevents: 2.3.3
+    dev: true
+
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -2914,6 +2986,10 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: false
 
+  /undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    dev: true
+
   /uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
@@ -2923,7 +2999,7 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: false
 
-  /vite@5.1.6:
+  /vite@5.1.6(@types/node@20.11.28):
     resolution: {integrity: sha512-yYIAZs9nVfRJ/AiOLCA91zzhjsHUgMjB+EigzFb6W2XTLO8JixBCKCjvhKZaye+NKYHCrkv3Oh50dH9EdLU2RA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -2951,6 +3027,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.11.28
       esbuild: 0.19.12
       postcss: 8.4.36
       rollup: 4.13.0
@@ -2958,7 +3035,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.0.0-rc.45(@algolia/client-search@4.22.1)(search-insights@2.13.0)(typescript@5.1.5):
+  /vitepress@1.0.0-rc.45(@algolia/client-search@4.22.1)(@types/node@20.11.28)(search-insights@2.13.0)(typescript@5.1.5):
     resolution: {integrity: sha512-/OiYsu5UKpQKA2c0BAZkfyywjfauDjvXyv6Mo4Ra57m5n4Bxg1HgUGoth1CLH2vwUbR/BHvDA9zOM0RDvgeSVQ==}
     hasBin: true
     peerDependencies:
@@ -2983,7 +3060,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.3.0
       shiki: 1.2.0
-      vite: 5.1.6
+      vite: 5.1.6(@types/node@20.11.28)
       vue: 3.4.21(typescript@5.1.5)
     transitivePeerDependencies:
       - '@algolia/client-search'

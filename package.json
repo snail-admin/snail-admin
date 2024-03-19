@@ -4,24 +4,37 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .ts,.tsx,.vue,.js,.jsx src --fix",
+    "postinstall": "simple-git-hooks"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx tsx scripts/verify-commit.ts"
+  },
   "nano-staged": {
     "*.{ts,tsx,js,vue,scss}": "prettier --write",
     "*.{ts,tsx,js,vue}": "eslint --fix"
   },
+  "packageManager": "pnpm@8.7.5",
+  "engines": {
+    "pnpm": ">=8.0"
+  },
   "devDependencies": {
     "@snail-admin/eslint-config": "workspace:*",
+    "@types/node": "^20.11.28",
+    "chalk": "^5.3.0",
     "eslint": "^8.43.0",
     "execa": "^5.0.0",
-    "rimraf": "^5.0.1",
     "nano-staged": "0.8.0",
     "nanospinner": "^1.1.0",
+    "picocolors": "^1.0.0",
     "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
     "simple-git-hooks": "^2.8.0",
+    "tsx": "^4.7.1",
     "typescript": "^5.1.5"
   }
 }
