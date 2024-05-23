@@ -1,0 +1,27 @@
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, rgb(244, 145, 15), #7eaadf);
+  --vp-home-hero-image-background-image: linear-gradient(135deg, #ff9100 10%, #ffc400 50%);
+  --vp-home-hero-image-filter: blur(100px);
+
+  /* botton按钮 */
+  /* --vp-button-brand-border: #81634b; */
+  /* 按钮文本颜色 */
+  --vp-button-brand-text: #ffffff;
+  /* 按钮背景颜色 */
+  /* --vp-button-brand-bg: #f45; */
+
+  /* 鼠标悬停的效果之后的样式 */
+  /* --vp-button-brand-hover-border: #00ffee;
+  --vp-button-brand-hover-text: #000000;
+  --vp-button-brand-hover-bg: #00ffee; */
+
+  /* --vp-button-brand-active-border: #ff7500; */
+
+  /* 主题基色 */
+  /* --vp-c-brand: #ff8400; */
+  /* 白色模式 主题基色 */
+  /* --vp-c-brand-light: #ff8400; */
+  /* 黑色模式 主题基色 */
+  /* --vp-c-brand-dark: #ff8400; */
+}

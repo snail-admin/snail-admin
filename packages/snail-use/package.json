@@ -1,0 +1,38 @@
+{
+  "name": "@snail-admin/snail-use",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "dev": "tsup src/index.ts --format esm --out-dir=lib --watch --dts",
+    "build": "tsup src/index.ts --format esm,cjs --out-dir=lib --dts --clean"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "files": [
+    "lib",
+    "tsconfig.json"
+  ],
+  "peerDependencies": {
+    "@types/node": "^18.7.18",
+    "typescript": "^5.1.5",
+    "vue": "^3.4.21"
+  },
+  "keywords": [
+    "utils",
+    "snail"
+  ],
+  "author": "hu-snail <1217437592@qq.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "tsup": "^8.0.2"
+  }
+}

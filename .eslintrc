@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "ignorePatterns": ["packages/snail-use/lib/**"],
+  "extends": ["@snail-admin"]
+}

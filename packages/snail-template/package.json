@@ -1,0 +1,23 @@
+{
+  "name": "@snail-admin/snail-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "hu-snail <1217437592@qq.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@snail-admin/eslint-config": "workspace:*",
+    "@snail-admin/snail-login": "workspace:*",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^5.1.5",
+    "vite": "^5.1.6",
+    "vue": "^3.4.21"
+  },
+  "dependencies": {
+    "sass": "^1.72.0"
+  }
+}
